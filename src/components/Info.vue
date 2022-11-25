@@ -1,5 +1,5 @@
 <template>
-  <div class="info">
+  <div class="info mt-30">
       <p class="title">
           <i></i>
           病毒信息

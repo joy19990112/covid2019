@@ -43,6 +43,7 @@ import "../node_modules/echarts/map/js/province/yunnan"
 import "../node_modules/echarts/map/js/province/zhejiang"
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
+import "tailwindcss/tailwind.css"
 
 Vue.use(VueAwesomeSwiper)
 Vue.use(Echarts)
