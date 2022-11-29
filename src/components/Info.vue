@@ -5,7 +5,6 @@
       病毒信息
     </p>
     <div class="content">
-      <!-- 接口失效 -->
     </div>
   </div>
 </template>
