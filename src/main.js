@@ -44,6 +44,7 @@ import "../node_modules/echarts/map/js/province/zhejiang"
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 import "tailwindcss/tailwind.css"
+import store from './store';
 
 Vue.use(VueAwesomeSwiper)
 Vue.use(Echarts)
@@ -54,5 +55,6 @@ Vue.config.productionTip = false
 new Vue({
   router,
   vant,
+  store,
   render: h => h(App)
 }).$mount('#app')
