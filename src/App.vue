@@ -1,19 +1,20 @@
 <template>
   <div id="app">
-    <router-view />
-    <van-tabbar v-model="active">
-      <van-tabbar-item icon="home-o">国内</van-tabbar-item>
-      <van-tabbar-item icon="friends-o">国外</van-tabbar-item>
-      <van-tabbar-item icon="search">搜索</van-tabbar-item>
-    </van-tabbar>
+    <router-view></router-view>
+    <!-- <bottomNav class="fixed bottom-0 left-0" style="z-index: 1000"></bottomNav> -->
   </div>
 </template>
 <script>
+const bottomNav = () => import("@/components/common/bottomNav");
+
 export default {
   data() {
     return {
       active: 0,
     };
+  },
+  components: {
+    bottomNav,
   },
 };
 </script>
