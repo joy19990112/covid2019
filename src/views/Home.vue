@@ -19,6 +19,7 @@
 
 <script>
 import { mapState } from "vuex";
+import testMixin from "@/mixins/test.js";
 import Header from "../components/Header";
 import Info from "../components/Info";
 import CaseNum from "../components/CaseNum";
@@ -28,6 +29,7 @@ import News from "../components/News";
 import Footer from "../components/Footer";
 
 export default {
+  mixins: [testMixin],
   name: "Home",
   components: {
     Header,
@@ -42,10 +44,22 @@ export default {
     return {};
   },
   created() {
+    // testMixin方法
+    this.getData(); 
     // 调用增长数据、最新新闻
     this.$store.dispatch(
       "ncovaDataStatistics/ncovaDataStatistics/queryStatisticsInfo"
     );
+    // TODO 有次数限制！！！
+    // this.$api
+    //   .getTravelPolicy({
+    //     from: 10309,
+    //     to: 10123,
+    //     key: "171e165a7d991c5f6ecd5194c54778ef",
+    //   })
+    //   .then((res) => {
+    //     console.log("resmmm", res);
+    //   });
   },
   computed: {
     // 更新时间、统计数据、最新新闻
