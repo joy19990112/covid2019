@@ -46,6 +46,9 @@ import 'swiper/dist/css/swiper.css'
 import "tailwindcss/tailwind.css"
 import store from './store';
 
+import utils from '@/utils/utils'
+Vue.prototype.$utils = utils;
+
 Vue.use(VueAwesomeSwiper)
 Vue.use(Echarts)
 Vue.use(vant)

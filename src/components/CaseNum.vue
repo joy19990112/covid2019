@@ -1,7 +1,13 @@
 <template>
   <div class="case-num">
     <div class="title">
-      <span>截至 {{ formatData(modifyTime) }} 全国数据统计</span>
+      <span
+        >截至
+        {{
+          $utils.dateFormaterDate(modifyTime, "YYYY/MM/DD")
+        }}
+        全国数据统计</span
+      >
     </div>
     <div class="item">
       <CaseNumItem
@@ -30,23 +36,7 @@ export default {
   components: {
     CaseNumItem,
   },
-  methods: {
-    formatData(date) {
-      var date = new Date(date);
-      var YY = date.getFullYear() + "-";
-      var MM =
-        (date.getMonth() + 1 < 10
-          ? "0" + (date.getMonth() + 1)
-          : date.getMonth() + 1) + "-";
-      var DD =
-        (date.getDate() < 10 ? "0" + date.getDate() : date.getDate()) + "   ";
-      var hh =
-        (date.getHours() < 10 ? "0" + date.getHours() : date.getHours()) + ":";
-      var mm =
-        date.getMinutes() < 10 ? "0" + date.getSeconds() : date.getSeconds();
-      return YY + MM + DD + hh + mm;
-    }
-  },
+  methods: {},
 };
 </script>
 
