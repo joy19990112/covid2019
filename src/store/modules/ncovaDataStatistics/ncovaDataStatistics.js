@@ -3,7 +3,8 @@ import api from "@/api/index"
 //疫情数据统计
 const state = {
   modifyTime: 0, //截止日期
-  statisticsLiat: [] //总数
+  statisticsLiat: [], //总数
+  newsDataList: [] //新闻数据列表
 };
 const mutations = {
   setModifyTime(state, str) {
@@ -11,6 +12,9 @@ const mutations = {
   },
   setStatisticsList(state, list) {
     state.statisticsLiat = list
+  },
+  setNewsDataList(state, list) {
+    state.newsDataList = list
   }
 };
 const actions = {
@@ -24,6 +28,8 @@ const actions = {
         key: "d7c335f2e7856ec48c1962a99fcc6f98"
       }).then(res => {
         if (res.code == '200') {
+          // 最新新闻
+          context.commit('setNewsDataList', res.newslist[0].news)
           // 截止日期
           context.commit('setModifyTime', res.newslist[0].desc.modifyTime)
           // 总数

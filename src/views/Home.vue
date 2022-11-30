@@ -1,11 +1,18 @@
 <template>
   <div class="home">
+    <!-- 顶部背景图片 -->
     <Header />
-    <Info :infoData="infoData" />
+    <!-- 新冠信息 -->
+    <!-- <Info :infoData="infoData" /> -->
+    <!-- 新增信息 -->
     <CaseNum :statisticsLiat="statisticsLiat" :modifyTime="modifyTime" />
+    <!-- 地图 -->
     <Map />
+    <!-- 折线图 -->
     <TreeChart />
-    <News :newsData="newsData" />
+    <!-- 新闻 -->
+    <News :newsDataList="newsDataList" />
+    <!-- 底部背景图片 -->
     <Footer />
   </div>
 </template>
@@ -32,21 +39,20 @@ export default {
     Footer,
   },
   data() {
-    return {
-      infoData: {},
-      caseNumData: {},
-      newsData: [],
-    };
+    return {};
   },
   created() {
+    // 调用增长数据、最新新闻
     this.$store.dispatch(
       "ncovaDataStatistics/ncovaDataStatistics/queryStatisticsInfo"
     );
   },
   computed: {
+    // 更新时间、统计数据、最新新闻
     ...mapState("ncovaDataStatistics/ncovaDataStatistics", [
       "modifyTime",
       "statisticsLiat",
+      "newsDataList",
     ]),
   },
 };
