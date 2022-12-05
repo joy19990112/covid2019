@@ -28,41 +28,42 @@ const actions = {
         key: "d7c335f2e7856ec48c1962a99fcc6f98"
       }).then(res => {
         if (res.code == '200') {
+          const addData = res.newslist[0].desc
           // 最新新闻
           context.commit('setNewsDataList', res.newslist[0].news)
           // 截止日期
-          context.commit('setModifyTime', res.newslist[0].desc.modifyTime)
+          context.commit('setModifyTime', addData.modifyTime)
           // 总数
           const caseNumDataList = [
             {
               title: '现存确诊',
-              addVal: res.newslist[0].desc.currentConfirmedIncr,
-              totalVal: res.newslist[0].desc.currentConfirmedCount,
+              addVal: addData.currentConfirmedIncr,
+              totalVal: addData.currentConfirmedCount,
             },
             {
               title: '现存疑似',
-              addVal: res.newslist[0].desc.suspectedIncr,
-              totalVal: res.newslist[0].desc.suspectedCount,
+              addVal: addData.suspectedIncr,
+              totalVal: addData.suspectedCount,
             },
             {
               title: '现存重症',
-              addVal: res.newslist[0].desc.seriousIncr,
-              totalVal: res.newslist[0].desc.seriousCount,
+              addVal: addData.seriousIncr,
+              totalVal: addData.seriousCount,
             },
             {
               title: '累计确诊',
-              addVal: res.newslist[0].desc.confirmedIncr,
-              totalVal: res.newslist[0].desc.confirmedCount,
+              addVal: addData.confirmedIncr,
+              totalVal: addData.confirmedCount,
             },
             {
               title: '累计死亡',
-              addVal: res.newslist[0].desc.deadIncr,
-              totalVal: res.newslist[0].desc.deadCount,
+              addVal: addData.deadIncr,
+              totalVal: addData.deadCount,
             },
             {
               title: '累计治愈',
-              addVal: res.newslist[0].desc.curedIncr,
-              totalVal: res.newslist[0].desc.curedCount,
+              addVal: addData.curedIncr,
+              totalVal: addData.curedCount,
             }
           ]
           context.commit('setStatisticsList', caseNumDataList)
