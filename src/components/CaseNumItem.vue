@@ -7,9 +7,10 @@
             <div class="create-count">
               <b>
                 较昨日
-                <em style="color: rgb(247, 76, 49)">{{
-                  dataIncrDecr(caseNumData.addVal)
-                }}</em>
+                <em style="color: rgb(247, 76, 49)">
+                  {{ parseFloat(caseNumData.addVal) > 0 ? "+" : ""
+                  }}{{ caseNumData.addVal }}</em
+                >
               </b>
             </div>
             <strong style="color: rgb(247, 76, 49)">{{
@@ -31,18 +32,7 @@ export default {
       type: Object,
       default: () => {},
     },
-  },
-  methods: {
-    dataIncrDecr(data) {
-      if (data > 0 && data != 0) {
-        return "+" + data;
-      } else if (data < 0 && data != 0) {
-        return "-" + data;
-      } else {
-        return data;
-      }
-    },
-  },
+  }
 };
 </script>
 
