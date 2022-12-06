@@ -32,7 +32,24 @@ export default {
       type: Object,
       default: () => {},
     },
-  }
+    // test1: {
+    //   type: String,
+    //   default: '',
+    // },
+    // test2: {
+    //   type: String,
+    //   default: '',
+    // },
+  },
+  data() {
+    return {
+      inheritAttrs: false,
+    };
+  },
+  mounted() {
+    console.log("this.$attrs C", this.$attrs);
+    this.$emit("getTestOne", "test $listeners");
+  },
 };
 </script>
 

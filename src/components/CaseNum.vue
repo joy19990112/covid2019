@@ -3,14 +3,14 @@
     <div class="title">
       <span
         >截至
-        {{
-          $utils.dateFormaterDate(modifyTime, "YYYY/MM/DD")
-        }}
+        {{ $utils.dateFormaterDate(modifyTime, "YYYY/MM/DD") }}
         全国数据统计</span
       >
     </div>
     <div class="item">
       <CaseNumItem
+        v-bind="$attrs"
+        v-on="$listeners"
         v-for="(item, index) in statisticsLiat"
         :key="index"
         :caseNumData="item"
@@ -35,6 +35,9 @@ export default {
   },
   components: {
     CaseNumItem,
+  },
+  mounted() {
+    console.log("this.$attrs B", this.$attrs, this.$listeners);
   },
   methods: {},
 };

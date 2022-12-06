@@ -5,7 +5,13 @@
     <!-- 新冠信息 -->
     <!-- <Info :infoData="infoData" /> -->
     <!-- 新增信息 -->
-    <CaseNum :statisticsLiat="statisticsLiat" :modifyTime="modifyTime" />
+    <CaseNum
+      :statisticsLiat="statisticsLiat"
+      :modifyTime="modifyTime"
+      :test1="test1"
+      :test2="test2"
+      @getTestOne="getTestTwo"
+    />
     <!-- 地图 -->
     <Map />
     <!-- 折线图 -->
@@ -41,11 +47,14 @@ export default {
     Footer,
   },
   data() {
-    return {};
+    return {
+      test1: "test one",
+      test2: "test two",
+    };
   },
   created() {
     // testMixin方法
-    this.getData(); 
+    this.getData();
     // 调用增长数据、最新新闻
     this.$store.dispatch(
       "ncovaDataStatistics/ncovaDataStatistics/queryStatisticsInfo"
@@ -60,6 +69,14 @@ export default {
     //   .then((res) => {
     //     console.log("resmmm", res);
     //   });
+  },
+  methods: {
+    getTestOne(e) {
+      console.log("test one", e);
+    },
+    getTestTwo() {
+      console.log("test two");
+    },
   },
   computed: {
     // 更新时间、统计数据、最新新闻
