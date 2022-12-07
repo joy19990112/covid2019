@@ -10,7 +10,7 @@
       :modifyTime="modifyTime"
       :test1="test1"
       :test2="test2"
-      @getTestOne="getTestTwo"
+      @getTestOne="getTestOne"
     />
     <!-- 地图 -->
     <Map />
@@ -72,7 +72,7 @@ export default {
   },
   methods: {
     getTestOne(e) {
-      console.log("test one", e);
+      console.log("我是孙调用的方法返回的数据:", e);
     },
     getTestTwo() {
       console.log("test two");

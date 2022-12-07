@@ -10,7 +10,7 @@
     color: #fff;
     font-size: 0.28rem;
     text-align: center;
-    background: url(../assets/images/head_bg_main.jpg) no-repeat;
+    /* background: url(../assets/images/head_bg_main.jpg) no-repeat; */
     background-size: 100% 100%;
 }
 </style>

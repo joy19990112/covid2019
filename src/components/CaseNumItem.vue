@@ -32,10 +32,10 @@ export default {
       type: Object,
       default: () => {},
     },
-    // test1: {
-    //   type: String,
-    //   default: '',
-    // },
+    test1: {
+      type: String,
+      default: '',
+    },
     // test2: {
     //   type: String,
     //   default: '',
@@ -47,7 +47,7 @@ export default {
     };
   },
   mounted() {
-    console.log("this.$attrs C", this.$attrs);
+    // console.log("this.$attrs C", this.$attrs);
     this.$emit("getTestOne", "test $listeners");
   },
 };

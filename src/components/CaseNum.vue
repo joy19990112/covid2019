@@ -32,12 +32,16 @@ export default {
       type: Number,
       default: 0,
     },
+    test1: {
+      type: String,
+      default: '',
+    },
   },
   components: {
     CaseNumItem,
   },
   mounted() {
-    console.log("this.$attrs B", this.$attrs, this.$listeners);
+    console.log("this.$attrs", this.$attrs);
   },
   methods: {},
 };
